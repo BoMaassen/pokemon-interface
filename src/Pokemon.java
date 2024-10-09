@@ -1,51 +1,48 @@
-import java.util.ArrayList;
-import java.util.List;
-
 public abstract class Pokemon {
-    private String name;
-    private int level;
+    private final String name;
+    private final int level;
     private int hp;
-    private String food;
-    private String sound;
+    private final String food;
+    private final String sound;
+    private final String type;
 
-
-    public Pokemon (String name, int level, int hp, String food, String sound){
+    public Pokemon (String name, int level, int hp, String food, String sound, String type){
         this.name = name;
         this.level = level;
         this.hp = hp;
         this.food = food;
         this.sound = sound;
+        this.type = type;
     }
 
     public String getName(){
-        return this.name;
+        return name;
     }
-    public void setName(String name){
-        this.name = name;
-    }
+
     public String getFood(){
-        return this.food;
+        return food;
     }
-    public void setFood(String food){
-        this.food = food;
-    }
+
     public String getSound(){
-        return this.sound;
+        return sound;
     }
-    public void setSound(String sound){
-        this.sound = sound;
-    }
+
     public int getLevel(){
-        return this.level;
+        return level;
     }
-    public void setLevel(int level){
-        this.level = level;
-    }
+
     public int getHp(){
-        return this.hp;
+        return hp;
     }
-    public void setHp(int hp){
-        this.hp = hp;
+    public void setHp(double change) {
+        this.hp += change;
+        if (this.hp < 0) {
+            this.hp = 0;
+        }
+    }
+
+    public String getType(){
+        return type;
     }
 
 
